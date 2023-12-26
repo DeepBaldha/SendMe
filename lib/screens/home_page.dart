@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  double money = 100;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,11 +23,25 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: Center(
-        child: ElevatedButton(
-            onPressed: () {
-              /*Navigator.push(context, MaterialPageRoute(builder: (context)=> ));*/
-            },
-            child: const Text('Generate Wallet')),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Wallet Money',
+              style: TextStyle(fontSize: 22),
+            ),
+            Text(
+              'Rs.$money',
+              style: const TextStyle(fontSize: 24),
+            ),
+            ElevatedButton(
+                onPressed: () {},
+                child: const Text(
+                  'Add Money',
+                  style: TextStyle(fontSize: 20),
+                )),
+          ],
+        ),
       ),
     );
   }
